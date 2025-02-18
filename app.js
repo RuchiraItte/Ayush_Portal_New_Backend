@@ -8,12 +8,7 @@ const session = require('express-session');
 require('dotenv').config(); // to access the values .env file
 
 const app = express();
-// app.use(cors({
-//   origin: ['http://localhost:5173','http://localhost:5174','http://localhost:5175',/^https:\/\/ayush-sai-2024-frontend\.vercel\.app(\/.*)?$/ ],  // Allows requests from this frontend url
-//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//   allowedHeaders: ['Content-Type', 'Authorization'],
-// }));
- 
+
 
 
 // Middleware
@@ -50,7 +45,7 @@ mongoose.connect(mongoUri)
     console.error('Error connecting to MongoDB Atlas:', error);
 });
 
-// mongoose.connect('mongodb://localhost:27017/aayushdb');
+
 }catch(e){
   console.log("cloud connecting error");
 }
@@ -105,7 +100,7 @@ app.get(['/', '/api'], (req, res) => {
 });
 
 
-const port = process.env.PORT || 5002;
+const port = process.env.PORTT || 5002;
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
